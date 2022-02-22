@@ -1,0 +1,52 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using TodoApp.Localization
+@using Volo.Abp.Users
+@model TodoApp.Web.Pages.IndexModel
+@inject IHtmlLocalizer<TodoAppResource> L
+@inject ICurrentUser CurrentUser
+
+@section styles {
+    <abp-style src="/Pages/Index.css"/>
+}
+
+@section scripts {
+    <abp-script src="/Pages/Index.js"/>
+}
+
+<div class="container">
+    <section class="col-md-12 col-lg-9">
+        <h3>
+            <a class="float-end d-none d-md-block" target="_blank" title="Subscribe Recent 20 Posts" href="/rss">
+                <i class="bi-rss font-125rem"></i>
+            </a>
+            <span>
+                待办事项
+            </span>
+        </h3>
+        <hr>
+        <form id="NewItemForm" class="row row-cols-lg-auto g-3 align-items-center">
+
+            <div class="col-12">
+                <div class="input-group">
+                    <input id="NewItemText" type="text" class="form-control" placeholder="输入内容...">
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">创建</button>
+            </div>
+        </form>
+        <div class="mb-4 d-none d-md-block"></div>
+        <!-- TODO ITEMS LIST -->
+        <ul id="TodoList">
+            @foreach (var todoItem in Model.TodoItems)
+            {
+                <li class="list-group-item list-group-item-action" data-id="@todoItem.Id">
+                    <i class="fa fa-trash-o"></i><b> @todoItem.Text</b>
+                </li>
+            }
+        </ul>
+        <div class="mb-4 d-none d-md-block"></div>
+        <hr class="d-none d-md-block">
+    </section>
+</div>
