@@ -25,7 +25,7 @@ public class TodoAppDbContext :
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
-    public DbSet<TodoItem> TodoItems{ get; set; }
+    public DbSet<TodoItem> TodoItems { get; set; }
 
     #region Entities from the modules
 

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 
 namespace TodoApp;
 
-public class TodoAppService : TodoAppAppService, ITodoAppService
+public class TodoAppService : ApplicationService, ITodoAppService
 {
     private readonly IRepository<TodoItem, Guid> _todoRepository;
 

@@ -30,6 +30,11 @@ public class TodoAppHttpApiClientModule : AbpModule
             RemoteServiceName
         );
 
+        context.Services.AddHttpClientProxies(
+            typeof(TodoAppApplicationContractsModule).Assembly,
+            RemoteServiceName
+        );
+
         Configure<AbpVirtualFileSystemOptions>(options =>
         {
             options.FileSets.AddEmbedded<TodoAppHttpApiClientModule>();

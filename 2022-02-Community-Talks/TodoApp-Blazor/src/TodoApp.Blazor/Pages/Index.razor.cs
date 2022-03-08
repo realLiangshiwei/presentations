@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace TodoApp.Blazor.Pages;
 
-public partial class Index
+public partial class Index : TodoAppComponentBase
 {
     [Inject]
     private ITodoAppService TodoAppService { get; set; }
