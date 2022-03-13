@@ -1,0 +1,23 @@
+﻿@page "/"
+@using Volo.Abp.MultiTenancy
+@inherits BlazorDayComponentBase
+@inject ICurrentTenant CurrentTenant
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<div class="page-content container">
+    <div style="text-align: center">
+
+        <p>@L["LongWelcomeMessage"]</p>
+
+        @if (!CurrentUser.IsAuthenticated)
+        {
+            <a class="ant-btn ant-btn-primary btn btn-primary" href="account/login">
+                @L["Login"]
+            </a>
+        }
+        else
+        {
+            <span>Current user : </span> @CurrentUser.UserName
+        }
+    </div>
+</div>
