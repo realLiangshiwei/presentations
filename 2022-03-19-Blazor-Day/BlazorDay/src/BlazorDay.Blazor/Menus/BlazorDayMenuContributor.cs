@@ -1,14 +1,17 @@
 ﻿using System.Threading.Tasks;
 using BlazorDay.Localization;
 using BlazorDay.MultiTenancy;
+using Volo.Abp.UI.Navigation;
+
 //using Volo.Abp.Identity.Blazor;
 //using Volo.Abp.SettingManagement.Blazor.Menus;
 //using Volo.Abp.TenantManagement.Blazor.Navigation;
+
 using AntDesign;
 using Lsw.Abp.IdentityManagement.Blazor.AntDesignUI;
 using Lsw.Abp.SettingManagement.Blazor.AntDesignUI;
 using Lsw.Abp.TenantManagement.Blazor.AntDesignUI;
-using Volo.Abp.UI.Navigation;
+
 
 namespace BlazorDay.Blazor.Menus;
 
@@ -33,7 +36,7 @@ public class BlazorDayMenuContributor : IMenuContributor
                 BlazorDayMenus.Home,
                 l["Menu:Home"],
                 "/",
-                icon: IconType.Outline.Home,// "fas fa-home", //
+                icon: IconType.Outline.Home,//  "fas fa-home", // 
                 order: 0
             )
         );

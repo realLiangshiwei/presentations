@@ -15,12 +15,14 @@ using BlazorDay.MultiTenancy;
 using Volo.Abp;
 using Volo.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
+
 //using Volo.Abp.AspNetCore.Components.Server.BasicTheme;
 //using Volo.Abp.AspNetCore.Components.Server.BasicTheme.Bundling;
 //using Volo.Abp.AspNetCore.Components.Web.Theming.Routing;
 //using Volo.Abp.Identity.Blazor.Server;
 //using Volo.Abp.SettingManagement.Blazor.Server;
 //using Volo.Abp.TenantManagement.Blazor.Server;
+
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
@@ -40,6 +42,7 @@ using Lsw.Abp.AspnetCore.Components.Server.AntDesignTheme.Bundling;
 using Lsw.Abp.IdentityManagement.Blazor.Server.AntDesignUI;
 using Lsw.Abp.TenantManagement.Blazor.Server.AntDesignUI;
 using Lsw.Abp.SettingManagement.Blazor.Server.AntDesignUI;
+using Lsw.Abp.AspnetCore.Components.Server.AntDesignTheme;
 
 namespace BlazorDay.Blazor;
 
@@ -53,13 +56,14 @@ namespace BlazorDay.Blazor;
     typeof(AbpAspNetCoreAuthenticationJwtBearerModule),
     typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpAccountWebIdentityServerModule),
-     //typeof(AbpAspNetCoreComponentsServerBasicThemeModule),
-     //typeof(AbpIdentityBlazorServerModule),
-     //typeof(AbpTenantManagementBlazorServerModule),
-     //typeof(AbpSettingManagementBlazorServerModule)
-     typeof(AbpIdentityBlazorServerAntDesignModule),
-     typeof(AbpTenantManagementBlazorServerAntDesignModule),
-     typeof(AbpSettingManagementBlazorServerAntDesignModule)
+   //typeof(AbpAspNetCoreComponentsServerBasicThemeModule),
+   //typeof(AbpIdentityBlazorServerModule),
+   //typeof(AbpTenantManagementBlazorServerModule),
+   //typeof(AbpSettingManagementBlazorServerModule)
+   typeof(AbpAspNetCoreComponentsServerAntDesignThemeModule),
+   typeof(AbpIdentityBlazorServerAntDesignModule),
+   typeof(AbpTenantManagementBlazorServerAntDesignModule),
+   typeof(AbpSettingManagementBlazorServerAntDesignModule)
    )]
 public class BlazorDayBlazorModule : AbpModule
 {
@@ -134,8 +138,8 @@ public class BlazorDayBlazorModule : AbpModule
                 bundle =>
                 {
                     bundle.AddFiles("/blazor-global-styles.css");
-                     //You can remove the following line if you don't use Blazor CSS isolation for components
-                     bundle.AddFiles("/BlazorDay.Blazor.styles.css");
+                    //You can remove the following line if you don't use Blazor CSS isolation for components
+                    bundle.AddFiles("/BlazorDay.Blazor.styles.css");
                 }
             );
         });
